@@ -123,24 +123,6 @@ namespace BlowFish_namespace
             return this.Crypt_CBC(pt, false);
         }
 
-        /// <summary>
-        /// Decrypts a byte array.
-        /// </summary>
-        /// <param name="cipherText">Ciphertext byte array.</param>
-        /// <param name="mode">Cipher mode.</param>
-        /// <returns>Plaintext or null if mode is not CipherMode.ECB.</returns>
-        public byte[] Decrypt(byte[] cipherText, CipherMode mode)
-        {
-            return mode switch
-            {
-                CipherMode.CBC => null,
-                CipherMode.CFB => null,
-                CipherMode.CTS => null,
-                CipherMode.OFB => null,
-                _ => null,
-            };
-        }
-
         // SBLOCKS ARE THE HEX DIGITS OF PI.
         // The amount of hex digits can be increased if you want to experiment with more rounds and longer key lengths
         private static uint[] SetupP() => new uint[]
