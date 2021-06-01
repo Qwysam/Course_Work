@@ -85,15 +85,6 @@ namespace Encryption
             return new string(list.ToArray());
         }
 
-        //private void AsyncCypher(out string input)
-        //{
-        //    string res = "";
-        //    foreach (char c in input)
-        //    {
-        //        res += decypher_table[c];
-        //    }
-        //}
-
         public string ParallelCypher(string input)
         {
 
@@ -213,29 +204,4 @@ namespace Encryption
                 return null;
         }
     }
-
-    //class Blowfish
-    //{
-    //    public BlowFish entity;
-    //    public byte[] Key;
-    //    public Blowfish(byte[] key)
-    //    {
-    //        Key = key;
-    //        entity = new BlowFish(key);
-    //    }
-
-    //    public string Encrypt(string data)
-    //    {
-    //        byte[] tmp = Encoding.UTF8.GetBytes(data);
-    //        tmp = entity.EncryptCBC(tmp);
-    //        return Encoding.UTF8.GetString(tmp);
-    //    }
-
-    //    public string Decrypt(string data)
-    //    {
-    //        byte[] tmp = Encoding.UTF8.GetBytes(data);
-    //        tmp = entity.DecryptCBC(tmp);
-    //        return Encoding.UTF8.GetString(tmp);
-    //    }
-    //}
 }
