@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Encryption
 {
     //class for Caesar cypher
-    class Caesar
+    public class Caesar
     {
         //dictionary to access shifted char while cyphering
         private Dictionary<char, char> cypher_table;
@@ -66,23 +66,23 @@ namespace Encryption
         //return string after cyphering
         public string Cypher(string input)
         {
-            string res = "";
+            List<char> list = new List<char>();
             foreach (char c in input)
             {
-                res += cypher_table[c];
+                list.Add(cypher_table[c]);
             }
-            return res;
+            return new string(list.ToArray());
         }
 
         //return string after decyphering
         public string Decypher(string input)
         {
-            string res = "";
+            List<char> list = new List<char>();
             foreach (char c in input)
             {
-                res += decypher_table[c];
+                list.Add(decypher_table[c]);
             }
-            return res;
+            return new string(list.ToArray());
         }
 
         //private void AsyncCypher(out string input)
@@ -132,12 +132,12 @@ namespace Encryption
     }
 
     //class for DES Encryption
-    class Des
+    public class Des
     {
         //bool variable to check if the key exists
         public bool HasKey { get { return key != null; } }
         //grants access to the key to show it to the uset
-        public byte[] Key { get { return key; } }
+        public byte[] Key { get { return key; } set { key = value; } }
         //stores the ke
         private byte[] key;
         //generates the key

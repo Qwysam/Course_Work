@@ -63,8 +63,6 @@ namespace Encryption
                 blowfish_key = tmp.Key;
                 BlowFish = new BlowFish(blowfish_key);
                 textBox_key.Text = Convert.ToBase64String(blowfish_key);
-                //byte[] input = Encoding.UTF8.GetBytes(text);
-                //byte[] enc = BlowFish.EncryptCBC(input);
                 string save_info = BlowFish.EncryptCBC(text);
                 File.WriteAllText("blowfish_enc.txt", save_info,Encoding.UTF8);
             }
